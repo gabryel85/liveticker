@@ -1,0 +1,105 @@
+.orderBookTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.bookPanel {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.collapsibleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.collapsibleTitle {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.bfxCollapsibleHeader {
+  display: flex;
+  align-items: center;
+}
+
+.trigger {
+  margin-right: 5px;
+}
+
+.uiButton {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.realtimeNotification {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff5f5f;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.notificationText {
+  color: #ff5f5f;
+}
+
+.uiCollapsibleBodyWrapper {
+  margin-top: 10px;
+}
+
+.uiCollapsibleBody {
+  padding: 10px 0;
+}
+
+.bookMain {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookSide {
+  flex-basis: 50%;
+  padding-right: 5px;
+}
+
+.bookHeader, .bookRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+.headerItem {
+  padding: 8px;
+  text-align: left;
+}
+
+.rowItem {
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.rowItem:first-child,
+.headerItem:first-child {
+  padding-left: 0;
+}
+
+.rowItem:last-child,
+.headerItem:last-child {
+  padding-right: 0;
+}
