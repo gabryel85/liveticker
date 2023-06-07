@@ -1,5 +1,6 @@
 {
   "name": "liveticker",
+  "homepage": "https://gabryel85.github.io/liveticker",
   "version": "0.1.0",
   "private": true,
   "jest": {
