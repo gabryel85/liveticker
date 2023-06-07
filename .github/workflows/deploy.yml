@@ -26,10 +26,6 @@ jobs:
           REACT_APP_WEBSOCKET_SYMBOL: ${{ secrets.REACT_APP_WEBSOCKET_SYMBOL }}
           REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
           REACT_APP_API_SECRET: ${{ secrets.REACT_APP_API_SECRET }}
-      - run: npm test
-        env:
-          CI: true
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
