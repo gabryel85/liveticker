@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { WebSocketState } from '../redux/realtimeData/types';
 import styles from './styles.module.scss';
 import CollapsibleHeader from './CollapsibleHeader';
 import {

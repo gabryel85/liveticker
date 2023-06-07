@@ -2,7 +2,6 @@ import {
   ActionTypes,
   initialState,
   WebSocketAction,
-  WebSocketActionTypes,
   WebSocketState,
 } from './types';
 import { Reducer } from 'redux';
