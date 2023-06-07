@@ -20,7 +20,7 @@ import store from '../store';
 
 let webSocketChannel: EventChannel<WebSocketPayloadData[]> | null = null;
 
-function handleWebSocketError(error: unknown, message: string) {
+export function handleWebSocketError(error: unknown, message: string) {
   console.error('WebSocket error: ', error);
 
   const notification = {

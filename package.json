@@ -2,6 +2,9 @@
   "name": "liveticker",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "transform": {}
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -57,6 +60,7 @@
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",
     "@types/reselect": "^2.2.0",
+    "axios-mock-adapter": "^1.21.4",
     "husky": "^8.0.3",
     "node-sass": "^7.0.3",
     "prettier": "2.8.8",
