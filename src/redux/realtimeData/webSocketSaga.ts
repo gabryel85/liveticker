@@ -140,6 +140,7 @@ export function* fetchInitialData(
   }
 }
 
+// eslint-disable-next-line require-yield
 export function* handleStopWebSocket(): SagaIterator {
   if (webSocketChannel) {
     webSocketChannel.close();
