@@ -1,21 +1,22 @@
+@import "src/styles/partials/variable";
+
 .orderBookTable {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
+  background-color: $background-color;
+  color: $text-color;
 }
 
 .bookPanel {
-  background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
+  background-color: $background-color;
+  border-top: 1px solid $border-color;
   padding: 10px;
+  overflow: hidden;
 }
 
 .collapsibleHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  border-bottom: 1px solid $border-color;
   cursor: pointer;
   padding-bottom: 5px;
 }
@@ -23,39 +24,6 @@
 .collapsibleTitle {
   font-weight: bold;
   margin-left: 5px;
-}
-
-.bfxCollapsibleHeader {
-  display: flex;
-  align-items: center;
-}
-
-.trigger {
-  margin-right: 5px;
-}
-
-.uiButton {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.realtimeNotification {
-  display: flex;
-  align-items: center;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  background-color: #ff5f5f;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.notificationText {
-  color: #ff5f5f;
 }
 
 .uiCollapsibleBodyWrapper {
@@ -69,6 +37,8 @@
 .bookMain {
   display: flex;
   justify-content: space-between;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 .bookSide {
@@ -76,11 +46,11 @@
   padding-right: 5px;
 }
 
-.bookHeader, .bookRow {
+.bookHeader {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   font-weight: bold;
-  background-color: #f5f5f5;
+  background-color: $background-color;
 }
 
 .headerItem {
@@ -94,12 +64,73 @@
   white-space: nowrap;
 }
 
-.rowItem:first-child,
-.headerItem:first-child {
-  padding-left: 0;
+.bookRow:nth-child(odd) {
+  background-color: $row-background-odd;
 }
 
-.rowItem:last-child,
-.headerItem:last-child {
-  padding-right: 0;
+.bookRow:nth-child(even) {
+  background-color: $row-background-even;
+}
+
+.bookRow:hover {
+  background-color: $row-background-hover;
+  transition: background-color 0.3s ease;
+}
+
+.bookRow:hover .rowItem {
+  color: $row-text-hover;
+}
+
+.bookRow:hover .headerItem {
+  color: $row-text-hover;
+}
+
+.bookRow .rowItem {
+  transition: color 0.3s ease;
+}
+
+.bookRow .headerItem {
+  transition: color 0.3s ease;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: $text-color;
+  background-color: $loading-background;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bookPanel .scrollbar::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: transparent;
+}
+
+.bookPanel .scrollbar::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-thumb;
+  border-radius: 0.2rem;
+}
+
+.bookPanel .scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: $scrollbar-thumb-hover;
+}
+
+.bookPanel .scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
 }

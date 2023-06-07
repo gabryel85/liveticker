@@ -8,6 +8,7 @@ import {
   stopWebSocketConnection,
 } from '../redux/realtimeData/realtimeDataActions';
 import { selectWebSocketActive, selectWebSocketData } from '../redux/selectors';
+import BookSide from './BookSide';
 
 const OrderBookTable: React.FC = () => {
   const dispatch = useDispatch();
@@ -18,16 +19,12 @@ const OrderBookTable: React.FC = () => {
   const handleDisconnect = useCallback(() => {
     const method = active ? stopWebSocketConnection : startWebSocketConnection;
     dispatch(method());
-  }, [active]);
-
-  if (!websocketData.length || !websocketData) {
-    return null;
-  }
+  }, [active, dispatch]);
 
   const limitedData = websocketData.slice(0, 1000);
 
-  const bids = limitedData.filter((item) => item[2] > 0);
-  const asks = limitedData.filter((item) => item[2] < 0);
+  const bids = limitedData.filter((item) => +item.amount > 0);
+  const asks = limitedData.filter((item) => +item.amount < 0);
 
   return (
     <div className={styles.orderBookTable}>
@@ -37,12 +34,12 @@ const OrderBookTable: React.FC = () => {
           <div className={styles.uiCollapsibleBody}>
             <div className={styles.bookMain}>
               <BookSide
-                title="BIDS"
+                title="bids"
                 data={bids}
                 header={['COUNT', 'AMOUNT', 'TOTAL', 'PRICE']}
               />
               <BookSide
-                title="ASKS"
+                title="asks"
                 data={asks}
                 header={['PRICE', 'TOTAL', 'AMOUNT', 'COUNT']}
               />
@@ -50,41 +47,6 @@ const OrderBookTable: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
-
-interface BookSideProps {
-  title: string;
-  data: any[];
-  header: string[];
-}
-
-interface BookSideProps {
-  title: string;
-  data: any[];
-  header: string[];
-}
-
-const BookSide: React.FC<BookSideProps> = ({ title, data, header }) => {
-  return (
-    <div className={`${styles.bookSide} ${styles.bookPanel}`}>
-      <div className={styles.bookHeader}>
-        {header.map((item, index) => (
-          <div key={index} className={styles.headerItem}>
-            {item}
-          </div>
-        ))}
-      </div>
-      {data.map((item, index) => (
-        <div key={index} className={styles.bookRow}>
-          {item.map((value: string | number, i: number) => (
-            <div key={i} className={styles.rowItem}>
-              {value}
-            </div>
-          ))}
-        </div>
-      ))}
     </div>
   );
 };

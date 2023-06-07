@@ -1,4 +1,5 @@
-@import "src/styles/main";
+@import "src/styles/partials/variable";
+@import "src/styles/partials/mixins";
 
 .collapsibleTitle {
   font-weight: bold;
@@ -9,26 +10,29 @@
 }
 
 .collapsibleHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(row, center, space-between);
+  border-bottom: 1px solid rgba($white-color, 0.2);
 }
 
 .notifications {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  @include flex(row, center, flex-end);
   gap: 10px;
 }
 
 .notificationText {
   color: $base-color;
+  margin-right: 20px;
+}
+
+.realTime {
+  @include flex(row, center, center);
 }
 
 .active {
   color: $active;
 }
 
-.deactive {
+.inactive {
   color: #ff5f5f;
 }
+

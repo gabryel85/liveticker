@@ -7,7 +7,7 @@ import {
 } from './types';
 import { Reducer } from 'redux';
 
-const MAX_DATA_LENGTH = 500;
+const MAX_DATA_LENGTH = 50;
 
 export const realtimeDataReducer: Reducer<WebSocketState, WebSocketAction> = (
   state = initialState,
