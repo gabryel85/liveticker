@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.9161525b.css",
-    "main.js": "/static/js/main.35e13bb2.js",
-    "index.html": "/index.html",
-    "main.9161525b.css.map": "/static/css/main.9161525b.css.map",
-    "main.35e13bb2.js.map": "/static/js/main.35e13bb2.js.map"
+    "main.css": "/liveticker/static/css/main.9161525b.css",
+    "main.js": "/liveticker/static/js/main.35e13bb2.js",
+    "index.html": "/liveticker/index.html",
+    "main.9161525b.css.map": "/liveticker/static/css/main.9161525b.css.map",
+    "main.35e13bb2.js.map": "/liveticker/static/js/main.35e13bb2.js.map"
   },
   "entrypoints": [
     "static/css/main.9161525b.css",
