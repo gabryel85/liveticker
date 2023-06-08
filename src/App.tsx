@@ -8,12 +8,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startWebSocketConnection());
-    const options = { method: 'GET', headers: { accept: 'application/json' } };
-
-    fetch('https://api-pub.bitfinex.com/v2/book/tBTCUSD/P0?len=25', options)
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
   }, [dispatch]);
   return (
     <div>
