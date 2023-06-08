@@ -16,10 +16,9 @@ export const realtimeDataReducer: Reducer<WebSocketState, WebSocketAction> = (
     case ActionTypes.RECEIVED_DATA:
       const newData = [action.payload[1], ...state.data];
       const limitedData = newData.slice(0, MAX_DATA_LENGTH);
-      const reversedData = limitedData.reverse();
       return {
         ...state,
-        data: reversedData,
+        data: limitedData,
       };
     case ActionTypes.WEBSOCKET_ERROR:
       return {
