@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/liveticker/static/css/main.d8f83cd0.css",
-    "main.js": "/liveticker/static/js/main.34ed072c.js",
+    "main.js": "/liveticker/static/js/main.fadb56ca.js",
     "index.html": "/liveticker/index.html",
     "main.d8f83cd0.css.map": "/liveticker/static/css/main.d8f83cd0.css.map",
-    "main.34ed072c.js.map": "/liveticker/static/js/main.34ed072c.js.map"
+    "main.fadb56ca.js.map": "/liveticker/static/js/main.fadb56ca.js.map"
   },
   "entrypoints": [
     "static/css/main.d8f83cd0.css",
-    "static/js/main.34ed072c.js"
+    "static/js/main.fadb56ca.js"
   ]
 }
