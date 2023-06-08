@@ -9,9 +9,11 @@ type Props = {
 
 export const PowerOffIcon: FC<Props> = ({ isActive }) => {
   return (
-    <FaPowerOff
-      className={clsx('active', { [styles.inactive]: isActive })}
-      data-testid={'power-off-icon'}
-    />
+    <span data-testid="power-off">
+      <FaPowerOff
+        className={clsx('active', { [styles.inactive]: isActive })}
+        data-testid={'power-off-icon'}
+      />
+    </span>
   );
 };

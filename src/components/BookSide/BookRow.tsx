@@ -34,7 +34,7 @@ export const BookRow: FC<BookRowProps> = ({
   });
 
   return (
-    <div className={rowClassName} style={rowStyle}>
+    <div className={rowClassName} style={rowStyle} data-testid="book-row">
       {children}
     </div>
   );

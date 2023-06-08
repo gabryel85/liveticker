@@ -1,13 +1,16 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './styles.module.scss';
-import CollapsibleHeader from './CollapsibleHeader';
+import CollapsibleHeader from '../CollapsibleHeader';
 import {
   startWebSocketConnection,
   stopWebSocketConnection,
-} from '../redux/realtimeData/realtimeDataActions';
-import { selectWebSocketActive, selectWebSocketData } from '../redux/selectors';
-import BookSide from './BookSide';
+} from '../../redux/realtimeData/realtimeDataActions';
+import {
+  selectWebSocketActive,
+  selectWebSocketData,
+} from '../../redux/selectors';
+import BookSide from '../BookSide';
 
 const OrderBookTable: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,7 +29,7 @@ const OrderBookTable: React.FC = () => {
   const asks = limitedData.filter((item) => +item.amount < 0);
 
   return (
-    <div className={styles.orderBookTable}>
+    <div className={styles.orderBookTable} data-testid="order-book-table">
       <div className={styles.bookPanel}>
         <CollapsibleHeader isActive={active} disconnect={handleDisconnect} />
         <div className={styles.uiCollapsibleBodyWrapper}>

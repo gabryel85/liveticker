@@ -12,19 +12,24 @@ type Props = {
 
 export const CollapsibleHeader: FC<Props> = ({ isActive, disconnect }) => {
   return (
-    <div className={styles.collapsibleHeader}>
+    <div className={styles.collapsibleHeader} data-testid="collapsible-header">
       <div>
         <span className={styles.collapsibleTitle}>ORDER BOOK</span>
       </div>
       <div className={styles.notifications}>
-        <div className={styles.realTime}>
+        <div className={styles.realTime} data-testid="notifications-icon">
           <NotificationsIcon isActive={isActive} />
           <div className={styles.notificationText}>REAL TIME</div>
         </div>
         <Button variant="rounded" onClick={disconnect} transparent>
           <IoIosNotificationsOutline size={16} />
         </Button>
-        <Button variant="rounded" onClick={disconnect} transparent>
+        <Button
+          variant="rounded"
+          onClick={disconnect}
+          transparent
+          data-testid="wss-off"
+        >
           <PowerOffIcon isActive={isActive} />
         </Button>
       </div>

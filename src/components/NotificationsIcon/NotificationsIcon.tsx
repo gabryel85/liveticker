@@ -10,13 +10,13 @@ export const NotificationsIcon: FC<Props> = ({ isActive }) => {
   return (
     <div>
       {isActive ? (
-        <RxDotFilled
-          size={24}
-          className={styles.active}
-          data-testid={'active-dot'}
-        />
+        <span data-testid={'active-dot'}>
+          <RxDotFilled size={24} className={styles.active} />
+        </span>
       ) : (
-        <RxDot size={24} className={styles.dot} data-testid={'inactive-dot'} />
+        <span data-testid={'inactive-dot'}>
+          <RxDot size={24} className={styles.dot} />
+        </span>
       )}
     </div>
   );

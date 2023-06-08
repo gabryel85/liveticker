@@ -6,5 +6,9 @@ interface BookItemProps {
 }
 
 export const BookItem: FC<BookItemProps> = ({ children }) => {
-  return <div className={styles.bookItem}>{children}</div>;
+  return (
+    <div className={styles.bookItem} data-testid="book-item">
+      {children}
+    </div>
+  );
 };

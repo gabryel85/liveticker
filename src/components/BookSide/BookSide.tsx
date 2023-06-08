@@ -26,7 +26,10 @@ export const BookSide: FC<BookSideProps> = ({ data, header, title }) => {
   }, [data, isBids]);
 
   return (
-    <div className={clsx(styles.bookSide, styles.bookPanel)}>
+    <div
+      className={clsx(styles.bookSide, styles.bookPanel)}
+      data-testid="book-side"
+    >
       <div className={styles.bookHeader}>
         {header.map((item, index) => (
           <div key={index} className={styles.headerItem}>
